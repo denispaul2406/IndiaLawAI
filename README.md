@@ -190,8 +190,7 @@ If you encounter OCR errors:
 ### **Event Details**
 - **Event**: Gen AI Hackathon 2025
 - **Organizers**: Google Cloud & Hack2Skill
-- **Theme**: Generative AI for Real-World Applications
-- **Track**: Legal Tech & Compliance
+- **Theme**: Generative AI for Demystifying Legal Documents
 
 ### **Our Solution**
 IndiaLawAI addresses the critical need for accessible legal compliance tools in India's diverse business landscape. By combining Google's Gemini AI with specialized legal domain knowledge, we've created a platform that democratizes legal expertise and makes compliance accessible to businesses of all sizes.
@@ -213,7 +212,7 @@ IndiaLawAI addresses the critical need for accessible legal compliance tools in 
 </div>
 
 ### **Our Mission**
-To bridge the gap between complex legal requirements and accessible compliance solutions for India's growing business ecosystem.
+A team where creativity meets AI. We unlock the hidden power of generative models by blending diverse ideas and technical skill, creating innovative solutions greater than the sum of their parts. This is Latent Synergy!
 
 ### **Technical Excellence**
 - **Modern Architecture**: Built with Next.js 15, TypeScript, and Tailwind CSS
@@ -265,23 +264,7 @@ To bridge the gap between complex legal requirements and accessible compliance s
 - [ ] Advanced analytics dashboard
 - [ ] Compliance monitoring and alerts
 
----
 
-## 📞 **Contact & Support**
-
-<div align="center">
-
-**Latent Synergy Team**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/company/latent-synergy)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/latent-synergy)
-[![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:contact@latentsynergy.com)
-
-**For technical support or business inquiries, please reach out to our team.**
-
-</div>
-
----
 
 <div align="center">
 
