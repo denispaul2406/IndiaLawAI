@@ -180,6 +180,8 @@ If you encounter OCR errors:
 - Verify `GOOGLE_CLOUD_API_KEY` is set in Netlify environment variables
 - Ensure Cloud Vision API is enabled in your Google Cloud project
 - Check that the API key has proper permissions for Vision API
+- **Fallback mechanism**: If Vision API fails for PDFs, the app automatically tries `pdf-parse` library as a backup
+- For images, Vision API is the primary method with no fallback
 
 ---
 
