@@ -1,0 +1,27 @@
+diff --git a/node_modules/pdf-parse/index.js b/node_modules/pdf-parse/index.js
+index a9d6e73..9a3c3c7 100644
+--- a/node_modules/pdf-parse/index.js
++++ b/node_modules/pdf-parse/index.js
+@@ -10,7 +10,3 @@
+     PDF_PARSE_OPTIONS: {}
+ };
+ module.exports = PDF;
+-
+-//for testing purpose
+-let fs = require('fs');
+-let path = require('path');
+-fs.readFileSync(path.join(__dirname, 'test/data/05-versions-space.pdf'));
+\ No newline at end of file
+diff --git a/node_modules/pdf-parse/lib/pdf-parse.js b/node_modules/pdf-parse/lib/pdf-parse.js
+index 23d386b..4a6a57e 100644
+--- a/node_modules/pdf-parse/lib/pdf-parse.js
++++ b/node_modules/pdf-parse/lib/pdf-parse.js
+@@ -102,7 +102,3 @@
+ 	}
+ };
+ 
+-//for testing purpose
+-let fs = require('fs');
+-let path = require('path');
+-fs.readFileSync(path.join(__dirname, '../test/data/05-versions-space.pdf'));
+\ No newline at end of file
