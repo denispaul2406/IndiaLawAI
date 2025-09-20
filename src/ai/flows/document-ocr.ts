@@ -39,7 +39,19 @@ const documentOcrFlow = ai.defineFlow(
   },
   async (input) => {
     try {
-      const visionClient = new ImageAnnotatorClient();
+      // Check if we have the required environment variables
+      if (!process.env.GOOGLE_CLOUD_API_KEY && !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+        throw new Error('Google Cloud Vision API credentials not configured. Please set GOOGLE_CLOUD_API_KEY or GOOGLE_APPLICATION_CREDENTIALS environment variable.');
+      }
+
+      // Initialize Vision client with proper authentication
+      const visionClient = new ImageAnnotatorClient({
+        projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+        // Use API key if available, otherwise fall back to service account
+        ...(process.env.GOOGLE_CLOUD_API_KEY && { 
+          apiKey: process.env.GOOGLE_CLOUD_API_KEY 
+        }),
+      });
 
       const imageContent = input.imageDataUri.split(';base64,').pop();
       if (!imageContent) {

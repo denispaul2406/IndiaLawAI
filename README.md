@@ -83,8 +83,9 @@ NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
 
-# Google Gemini API Key (for AI functionality)
-GEMINI_API_KEY=your_google_api_key_here
+# Google AI Services
+GEMINI_API_KEY=your_gemini_api_key_here
+GOOGLE_CLOUD_API_KEY=your_google_cloud_api_key_here
 ```
 
 ### 2. Configure Firebase
@@ -131,6 +132,7 @@ This application is configured for easy deployment on Netlify with proper Fireba
    NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
    NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
    GEMINI_API_KEY=your_gemini_api_key
+   GOOGLE_CLOUD_API_KEY=your_google_cloud_api_key
    ```
 3. **Build settings** (automatically configured via `netlify.toml`):
    - Build command: `npm run build`
@@ -147,12 +149,37 @@ This application is configured for easy deployment on Netlify with proper Fireba
    - `Cross-Origin-Opener-Policy: same-origin-allow-popups`
    - `Cross-Origin-Embedder-Policy: unsafe-none`
 
+#### **Google Cloud Vision API Setup:**
+
+1. **Enable Vision API** in Google Cloud Console:
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Select your project
+   - Navigate to "APIs & Services" → "Library"
+   - Search for "Cloud Vision API" and enable it
+
+2. **Create API Key**:
+   - Go to "APIs & Services" → "Credentials"
+   - Click "Create Credentials" → "API Key"
+   - Copy the generated API key
+   - Add it to your environment variables as `GOOGLE_CLOUD_API_KEY`
+
+3. **Restrict API Key** (recommended):
+   - Click on your API key to edit it
+   - Under "API restrictions", select "Restrict key"
+   - Choose "Cloud Vision API" from the list
+   - Save the changes
+
 #### **Troubleshooting:**
 
 If you encounter CORS or popup issues:
 - Ensure your domain is added to Firebase Auth authorized domains
 - Check that environment variables are properly set in Netlify
 - Verify the `netlify.toml` configuration is deployed
+
+If you encounter OCR errors:
+- Verify `GOOGLE_CLOUD_API_KEY` is set in Netlify environment variables
+- Ensure Cloud Vision API is enabled in your Google Cloud project
+- Check that the API key has proper permissions for Vision API
 
 ---
 
