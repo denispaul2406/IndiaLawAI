@@ -71,7 +71,7 @@ Follow these steps to set up and run the project locally.
 
 ### 1. Set Up Environment Variables
 
-Create a `.env.local` file in the root of the project with the following variables:
+Create a `.env` file in the root of the project with the following variables:
 
 ```env
 # Firebase Configuration
@@ -89,8 +89,8 @@ GEMINI_API_KEY=your_google_api_key_here
 
 ### 2. Configure Firebase
 
-- In your Firebase project console, go to **Authentication > Settings > Authorized domains** and add the domain of your development environment (e.g., `localhost`, `cloudworkstations.dev`).
-- Copy your Firebase configuration values from the Firebase console and add them to your `.env.local` file.
+- In your Firebase project console, go to **Authentication > Settings > Authorized domains** and add the domain of your development environment (e.g., `localhost`).
+- Copy your Firebase configuration values from the Firebase console and add them to your `.env` file.
 
 ### 3. Install Dependencies
 
@@ -109,6 +109,50 @@ npm run dev
 ```
 
 The application will be available at `http://localhost:9002`. You will be prompted to log in or sign up before you can access the analysis workbench.
+
+---
+
+## 🚀 **Deployment**
+
+### **Netlify Deployment**
+
+This application is configured for easy deployment on Netlify with proper Firebase Auth support.
+
+#### **Deployment Steps:**
+
+1. **Connect your repository** to Netlify
+2. **Set environment variables** in Netlify dashboard:
+   ```
+   NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
+   GEMINI_API_KEY=your_gemini_api_key
+   ```
+3. **Build settings** (automatically configured via `netlify.toml`):
+   - Build command: `npm run build`
+   - Publish directory: `.next`
+   - Node version: 18
+
+#### **Firebase Auth Configuration:**
+
+1. **Add your Netlify domain** to Firebase Auth authorized domains:
+   - Go to Firebase Console → Authentication → Settings → Authorized domains
+   - Add your Netlify domain (e.g., `your-app.netlify.app`)
+
+2. **The app includes** proper CORS headers for Firebase Auth popup compatibility:
+   - `Cross-Origin-Opener-Policy: same-origin-allow-popups`
+   - `Cross-Origin-Embedder-Policy: unsafe-none`
+
+#### **Troubleshooting:**
+
+If you encounter CORS or popup issues:
+- Ensure your domain is added to Firebase Auth authorized domains
+- Check that environment variables are properly set in Netlify
+- Verify the `netlify.toml` configuration is deployed
 
 ---
 
