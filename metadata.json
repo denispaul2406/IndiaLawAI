@@ -1,0 +1,5 @@
+
+{
+  "name": "IndiaLawAI",
+  "description": "A multi-agent legal document compliance platform that ingests PDFs/images, performs high-accuracy OCR and entity extraction, analyzes compliance using Gemini, grounds answers in Indian laws, and returns an IndiaLaw Score (0–100) with risks and recommendations."
+}
